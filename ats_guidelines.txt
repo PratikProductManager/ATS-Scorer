@@ -1,0 +1,86 @@
+ATS Resume Writing & Scoring Guidelines
+
+1.  Resume Structure An ATS-friendly resume must contain clearly labeled
+    sections:
+
+-   Contact Information
+-   Professional Summary
+-   Skills / Technical Skills
+-   Work Experience
+-   Projects (if applicable)
+-   Education
+-   Certifications (optional)
+
+Avoid tables, images, text boxes, columns, and complex formatting. Use
+simple fonts such as Arial, Calibri, or Times New Roman.
+
+2.  Keyword Optimization
+
+-   Use exact keywords from the job description.
+-   Include required tools, technologies, and frameworks.
+-   Mention role-specific terminology.
+-   Avoid keyword stuffing.
+-   Place important keywords in Skills and Experience sections.
+
+3.  Skills Section Best Practices Skills must be clearly separated, easy
+    to scan, and relevant to the role. Example: Technical Skills:
+    Python, SQL, Machine Learning, Deep Learning, TensorFlow, Docker,
+    REST API, Git
+
+4.  Experience Section (Most Important) Each bullet must follow: Action
+    Verb + Task + Tool + Measurable Result
+
+Example: - Developed ML model using Python improving accuracy by 18%. -
+Optimized SQL queries reducing latency by 30%. - Built REST API handling
+10,000+ daily requests.
+
+5.  Quantification Strong resumes include measurable impact:
+
+-   Increased accuracy by 12%
+-   Reduced latency by 30%
+-   Processed 1M+ records daily
+-   Improved efficiency by 22%
+
+6.  Resume Tailoring
+
+-   Match skills with job requirements.
+-   Highlight relevant experience first.
+-   Remove irrelevant tools.
+-   Use role-specific keywords.
+-   Align summary with job role.
+
+7.  Common ATS Rejection Reasons
+
+-   Missing required skills
+-   No measurable achievements
+-   Poor keyword match
+-   Weak experience descriptions
+-   Generic resume not tailored to job
+-   Bad formatting
+
+8.  ATS Scoring Logic (Reference) Typical ATS scoring considers:
+
+-   Keyword Match → 40%
+-   Skills Match → 25%
+-   Experience Relevance → 20%
+-   Achievements & Quantification → 10%
+-   Formatting & Structure → 5%
+
+A strong resume typically scores above 75/100.
+
+9.  Improvement Recommendations Logic Improvement suggestions should
+    focus on:
+
+-   Adding missing job-specific skills
+-   Including quantified achievements
+-   Improving experience descriptions
+-   Tailoring resume to job description
+-   Adding relevant tools/frameworks
+-   Strengthening technical skills section
+
+10. ATS Output Expectations The ATS system should return:
+11. ATS Score (0–100)
+12. Missing / Non-matching Skills
+13. Resume Strengths
+14. Weaknesses
+15. Improvement Recommendations
