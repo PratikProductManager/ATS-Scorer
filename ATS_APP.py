@@ -8,9 +8,13 @@ from RAG_Utility import process_documents_to_chroma, evaluate_resume
 # -------------------------------------------------
 working_dir = os.path.dirname(os.path.abspath(__file__))
 
-st.set_page_config(page_title="ATS Resume Scorer- Powered by Pratik", page_icon="📄")
+st.set_page_config(page_title="Resume ATS Scorer- Powered by Pratik", page_icon="📄")
 
-st.title("📄 ATS Resume Scorer")
+st.title("📄 Resume ATS Scorer")
+st.markdown(
+    "<h3 style='text-align: center;'>📄 Resume ATS Scorer</h3>",
+    unsafe_allow_html=True
+)
 
 # -------------------------------------------------
 # Upload Resume
@@ -57,4 +61,5 @@ if st.button("Calculate ATS Score"):
             result = evaluate_resume(job_description)
 
         st.markdown("## 📊 ATS Evaluation Result")
+
         st.markdown(result)
