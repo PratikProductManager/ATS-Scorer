@@ -11,7 +11,10 @@ working_dir = os.path.dirname(os.path.abspath(__file__))
 st.set_page_config(page_title="ATS Resume Scorer- Powered by Pratik", page_icon="📄")
 
 st.title("📄 ATS Resume Scorer")
-
+st.markdown(
+    "<h2 style='font-size:28px;'>📄 ATS Resume Scorer</h2>",
+    unsafe_allow_html=True
+)
 # -------------------------------------------------
 # Upload Resume
 # -------------------------------------------------
@@ -57,4 +60,5 @@ if st.button("Calculate ATS Score"):
             result = evaluate_resume(job_description)
 
         st.markdown("## 📊 ATS Evaluation Result")
+
         st.markdown(result)
