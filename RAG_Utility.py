@@ -1,6 +1,6 @@
 import os
 from dotenv import load_dotenv
-
+import streamlit as st
 from langchain_community.document_loaders import PyPDFLoader, TextLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
@@ -18,8 +18,11 @@ load_dotenv()
 working_dir = os.path.dirname(os.path.abspath(__file__))
 
 embedding = HuggingFaceEmbeddings()
-
+groq_api_key = os.getenv("GROQ_API_KEY") or st.secrets.get("GROQ_API_KEY")
 llm = ChatGroq(
+    groq_api_key=groq_api_key,
+    model="llama-3.3-70b-versatile",
+    temperature=0
     model="llama-3.3-70b-versatile",
     temperature=0
 )
@@ -113,5 +116,6 @@ def evaluate_resume(job_description):
     ats_chain = create_ats_chain(retriever)
 
     result = ats_chain.invoke(job_description)
+
 
     return result
