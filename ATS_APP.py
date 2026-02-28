@@ -10,10 +10,10 @@ working_dir = os.path.dirname(os.path.abspath(__file__))
 
 st.set_page_config(page_title="ATS Resume Scorer- Powered by Pratik", page_icon="📄")
 
-st.markdown(
-    "<h2 style='font-size:28px;'>📄Resume ATS Scorer</h2>",
-    unsafe_allow_html=True
-)
+##st.title("📄 ATS Resume Scorer-  Powered by Pratik")
+st.markdown("### 📄 ATS Resume Scorer - Powered by Pratik")
+
+
 # -------------------------------------------------
 # Upload Resume
 # -------------------------------------------------
@@ -55,10 +55,8 @@ if st.button("Calculate ATS Score"):
         st.warning("Please paste the job description")
 
     else:
-        with st.spinner("Evaluating resume with Llama-3.3-70B..."):
+        with st.spinner("Evaluating resume with meta/llama-3.3-70b-instruct"):
             result = evaluate_resume(job_description)
 
         st.markdown("## 📊 ATS Evaluation Result")
-
         st.markdown(result)
-
