@@ -1,6 +1,7 @@
 import os
+import shutil
 from dotenv import load_dotenv
-import streamlit as st
+
 from langchain_community.document_loaders import PyPDFLoader, TextLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
@@ -10,6 +11,7 @@ from langchain_groq import ChatGroq
 from langchain_core.runnables import RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import PromptTemplate
+from langchain_nvidia_ai_endpoints import NVIDIAEmbeddings, ChatNVIDIA
 
 # -------------------------------------------------
 # Setup
@@ -17,11 +19,10 @@ from langchain_core.prompts import PromptTemplate
 load_dotenv()
 working_dir = os.path.dirname(os.path.abspath(__file__))
 
-embedding = HuggingFaceEmbeddings()
-groq_api_key = os.getenv("GROQ_API_KEY") or st.secrets.get("GROQ_API_KEY")
-llm = ChatGroq(
-    groq_api_key=groq_api_key,
-    model="llama-3.3-70b-versatile",
+embedding = NVIDIAEmbeddings(model="nvidia/nv-embed-v1")
+
+llm = ChatNVIDIA(
+    model="meta/llama-3.3-70b-instruct",
     temperature=0
 )
 
@@ -51,6 +52,9 @@ def process_documents_to_chroma(resume_file):
     texts = splitter.split_documents(documents)
 
     # ---- Store in Chroma ----
+    if os.path.exists(VECTOR_DB_PATH):
+        shutil.rmtree(VECTOR_DB_PATH)
+
     Chroma.from_documents(
         documents=texts,
         embedding=embedding,
@@ -115,6 +119,4 @@ def evaluate_resume(job_description):
 
     result = ats_chain.invoke(job_description)
 
-
     return result
-
