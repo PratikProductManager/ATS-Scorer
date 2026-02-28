@@ -10,3 +10,4 @@ unstructured[pdf]
 langchain-unstructured
 langchain-chroma
 langchain-groq
+langchain_nvidia_ai_endpoints
